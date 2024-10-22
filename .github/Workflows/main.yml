@@ -46,7 +46,7 @@ jobs:
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: html5
-          ITCH_GAME: <Your Itch Game Name (name is at the end of game url)>
+          ITCH_GAME: pixel-cairn-wip
           ITCH_USER: tr3ePanda
           PACKAGE: build/WebGL
       - name: Cleanup to avoid storage limit
