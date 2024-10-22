@@ -1,0 +1,3 @@
+﻿- name: Butler Push
+  uses: yeslayla/butler-publish-itchio-action@v1.0.3
+            
