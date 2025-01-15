@@ -59,6 +59,8 @@ jobs:
       # Deploy
       - name: Upload build to itch.io
         uses: robpc/itchio-upload-action@v1
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
         with:
           path: build/WebGL
           project: pixel-cairn-wip
