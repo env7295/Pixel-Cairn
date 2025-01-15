@@ -57,13 +57,21 @@ jobs:
       #  run: echo "SHORT_HASH=$(git rev-parse --short HEAD)" >> ${GITHUB_ENV}
 
       # Deploy
-      - name: Upload build to itch.io
-        uses: robpc/itchio-upload-action@v1
+      - name: Upload 
+        uses: manleydev/butler-publish-itchio-action@master
         env:
-          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-        with:
-          path: build/WebGL
-          project: pixel-cairn-wip
-          channel: webgl
-          api-key: ${{ secrets.ITCH_API_KEY }}
-          version: 1
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
+          CHANNEL: windows
+          ITCH_GAME: example-project
+          ITCH_USER: username
+          PACKAGE: build/WebGL
+      #- name: Upload build to itch.io
+       # uses: robpc/itchio-upload-action@v1
+       # env:
+        #  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+       # with:
+         # path: build/WebGL
+          #project: pixel-cairn-wip
+          #channel: webgl
+          #api-key: ${{ secrets.ITCH_API_KEY }}
+          #version: 1
